@@ -20,14 +20,16 @@
 
 - (void)updateString
 {
-	self.string = textfield.text;
-	label.text = self.string;
+	self.string = self.textfield.text;
+    NSLog(@"%@",self.string);
+	self.label.text = self.string;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    NSLog(@"return textfield");
     // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
-    if (theTextField == textField) {
-        [textField resignFirstResponder];
+    if (theTextField == self.textfield) {
+        [self.textfield resignFirstResponder];
         // Invoke the method that changes the greeting.
         [self updateString];
     }
@@ -37,18 +39,19 @@
  
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"touch began");
     // Dismiss the keyboard when the view outside the text field is touched.
-    [textField resignFirstResponder];
+    [self.textfield resignFirstResponder];
     // Revert the text field to the previous value.
-    textField.text = self.string; 
+    self.textfield.text = self.string;
     [super touchesBegan:touches withEvent:event];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    textfield.clearButtonMode = UITextFieldViewModeWhileEditing;
-    label.text = textfield.placeholder;
+    self.textfield.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.label.text = self.textfield.placeholder;
 }
 
 - (void)didReceiveMemoryWarning {
