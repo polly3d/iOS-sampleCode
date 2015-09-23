@@ -27,7 +27,11 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSLog(@"reutrn enter");
+    if(textfield == textField)
+    {
+    	[textField resignFirstResponder];
+    	[self updateString];
+    }
     return YES;
 }
  
