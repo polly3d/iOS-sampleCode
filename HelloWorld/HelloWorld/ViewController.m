@@ -25,14 +25,9 @@
 	self.label.text = self.string;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    NSLog(@"return textfield");
-    // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
-    if (theTextField == self.textfield) {
-        [self.textfield resignFirstResponder];
-        // Invoke the method that changes the greeting.
-        [self updateString];
-    }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"reutrn enter");
     return YES;
 }
  
@@ -49,7 +44,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.textfield.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.label.text = self.textfield.placeholder;
 }
