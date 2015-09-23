@@ -15,4 +15,4 @@
 
 最后，应该是要上一张效果图。
 
-![截图](https://github.com/polly3d/iOS-sampleColde/raw/master/img1.png)
+![截图](https://raw.githubusercontent.com/polly3d/iOS-sampleCode/master/HelloWorld/img1.png)
