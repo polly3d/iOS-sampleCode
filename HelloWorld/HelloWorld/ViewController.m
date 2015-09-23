@@ -18,13 +18,7 @@
 
 @implementation ViewController
 
-#pragma mark - normalMethod
-- (void)updateString
-{
-	self.string = self.textfield.text;
-    NSLog(@"%@",self.string);
-	self.label.text = self.string;
-}
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +29,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - normalMethod
+
+- (void)updateString
+{
+	self.string = self.textfield.text;
+    NSLog(@"%@",self.string);
+	self.label.text = self.string;
 }
 
 #pragma mark - protocol
